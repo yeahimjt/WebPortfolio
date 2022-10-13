@@ -1,0 +1,117 @@
+/*
+*   Globally set margin and padding defaults to 0
+*/
+
+* {
+    margin:0;
+    padding:0;
+}
+
+/* .nav-bar -> Link, Nav -> UL -> LI -> NavLink -> FontAwesomeIcon */
+
+.nav-bar {
+    display:flex;
+    position:absolute;
+    justify-content:space-between;
+    align-items:center;
+    height:50px;
+    padding: 10px 35px;
+    z-index:100;
+    width:95vw;
+    animation: nav-load 300ms ease-in;
+}
+
+@keyframes nav-load {
+    0% {
+        transform:translateY(-100%);
+    }
+    100% {
+        transform:translateY(0);
+    }
+}
+
+/* Logo */
+
+img {
+    margin-left:20px;
+    width:50px;
+    margin-top:10px;
+}
+
+/* Navigation menu icons to navigate to different pages*/
+
+.about-icon, .project-icon, .demo-icon, .feedback-icon, .person-icon {
+    width:30px;
+    height:30px;
+}
+
+/* Navigation menu icons to navigate to different websites */
+
+.linkedin-icon, .github-icon {
+    width:20px;
+    height:20px;
+}
+
+/* Removing bullet points from ul list */
+
+ul {
+    list-style:none;
+
+    /* Making list display horizontally rather than vertically, and adding margin spacing between each other */
+
+    li {
+        display:inline-block;
+        margin:0px 40px;
+    }
+}
+
+/* Changing the hyperlink default colors to white, it's position relative, and no text decoration. */
+
+a {
+    color: white;
+    display:block;
+    position:relative;
+    text-decoration:none;
+    
+}
+
+/* Setting a empty box beneath the hyperlink icons by default */
+
+nav ul li a::after{
+    content:'';
+    width:0;
+    height:4px;
+    position:absolute;
+    bottom:-5px;
+    left:50%;
+    border-radius:4px;
+    transform:translateX(-50%);
+    background:#967373;
+    transition: width 0.3s;
+}
+
+/* Setting empty box beneath the hyperlink icons to increase width by 100% */
+
+nav ul li a:hover::after {
+    width:100%;
+}
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

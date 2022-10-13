@@ -1,0 +1,22 @@
+.about-container {
+    width:550px;
+    height:550px;
+    border-radius:50px;
+    background:rgba(#A9BCD0,.58);
+    position:absolute;
+    top:20%;
+    left:10%;
+    padding:35px 30px;
+    box-shadow:-20px -5px 20px gray;
+
+}
+
+.about-heading,.about-subheading {
+    text-align:center;
+}
+
+.about-text {
+    margin:20px 0px;
+    font-size:20px;
+}
+
