@@ -1,6 +1,7 @@
 import "./index.scss";
 import React from "react";
-
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faExpand} from "@fortawesome/free-solid-svg-icons";
 
 
 function Modal({closeModal}) {
@@ -9,6 +10,7 @@ return (
             <div class="modal-content">
                 <span class="close" onClick={() => closeModal(false)}>&times;</span>
                 <p className="modal-heading">Fill out an e-mail to send to me</p>
+                <hr></hr>
                 <form>
                     <div className="user-name">
                         <label for="fname">
@@ -34,8 +36,8 @@ return (
                     </div>
                     <div className="user-content">
                         <label for="content">
-                            Content:<br/>
-                        <input type="text" id="content"></input>
+                            Content:<FontAwesomeIcon className="expand"icon={faExpand}/><br/>
+                        <textarea type="freeform" id="content"></textarea>
                         </label>
                     </div>
                     <button className="sendBtn"><p>Send</p></button>

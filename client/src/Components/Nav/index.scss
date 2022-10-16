@@ -68,11 +68,15 @@ ul {
 /* Changing the hyperlink default colors to white, it's position relative, and no text decoration. */
 
 a {
-    color: white;
+    color: #F2294E;
     display:block;
     position:relative;
     text-decoration:none;
     
+}
+
+a.active {
+    color:#2b2d42;
 }
 
 /* Setting a empty box beneath the hyperlink icons by default */
@@ -86,7 +90,7 @@ nav ul li a::after{
     left:50%;
     border-radius:4px;
     transform:translateX(-50%);
-    background:#967373;
+    background:#2b2d42;
     transition: width 0.3s;
 }
 
