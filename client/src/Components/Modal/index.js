@@ -1,11 +1,17 @@
 import "./index.scss";
-import React from "react";
+import {React,useState} from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faExpand} from "@fortawesome/free-solid-svg-icons";
 
-
 function Modal({closeModal}) {
-return (
+
+    const [isActive, setIsActive] = useState(false);
+
+    const handleClick = () => {
+        setIsActive(current=>!current)
+    }
+
+    return (
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close" onClick={() => closeModal(false)}>&times;</span>
@@ -14,30 +20,43 @@ return (
                 <form>
                     <div className="user-name">
                         <label for="fname">
-                            First name:
+                            First name
                         <input type="text" id="fname"></input>
                         </label>
                         <label for="lname">
-                            Last name:
+                            Last name
                         <input type="text" id="lname"></input>
                         </label>
                     </div>
                     <div className="user-email">
                         <label for="email">
-                            Email:<br/>
+                            Email<br/>
                         <input type="text" id="email"></input>
                         </label>
                     </div>
                     <div className="user-subject">
                         <label for="subject">
-                            Subject:<br/>
+                            Subject<br/>
                         <input type="text" id="subject"></input>
                         </label>
                     </div>
                     <div className="user-content">
                         <label for="content">
-                            Content:<FontAwesomeIcon className="expand"icon={faExpand}/><br/>
-                        <textarea type="freeform" id="content"></textarea>
+                            Content<br/>
+                        <div className="inside-textarea" style={{
+                                    width: isActive ? '60%' : '100%',
+                                    position: isActive ? 'absolute' : 'relative',
+                                    top: isActive ? '16%' : '', 
+                                    left: isActive ? '20%' : '',
+                            }}> 
+                            <textarea type="freeform" id="content" 
+                                style={{
+                                    height: isActive ? '565px' : '290px',
+                                }}>
+
+                            </textarea>
+                            <div className="divBtn" onClick={handleClick}><FontAwesomeIcon className="expand"icon={faExpand}/></div>
+                        </div>   
                         </label>
                     </div>
                     <button className="sendBtn"><p>Send</p></button>

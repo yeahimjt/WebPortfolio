@@ -16,12 +16,15 @@
 .modal-content{
     background-color:white;
     border-radius:20px;
-    margin:4% auto;
+    margin:3% auto;
     padding:20px;
     border: 1px solid #777;
     width:40%;
-    height:80%;
+    height:710px;
     animation: modal-load 300ms ease-in;
+
+    
+
 }
 
 @keyframes modal-load {
@@ -41,6 +44,7 @@
     top:-10px;
     font-size:30px;
     font-weight:bold;
+    z-index:200;
 }
 
 .close:hover,.close:focus {
@@ -58,8 +62,7 @@ input {
     padding:5px 8px;
     background-color:floralwhite;
     font-size:18px;
-
-    border:1px solid lightgray;
+    border:none;
 }
 label {
     font-size:20px;
@@ -82,7 +85,7 @@ hr {
     display:flex;
     align-items:center;
     justify-content:space-between;
-    margin:20px 40px;
+    margin:20px 20px;
     label {
         font-size:20px;
         #fname, #lname {
@@ -92,40 +95,79 @@ hr {
 }
 
 .user-email {
-    margin:20px 40px;
+    margin:20px 20px;
     #email {
         width:100%;
     }
 }
 
 .user-subject {
-    margin:20px 40px;
+    margin:20px 20px;
     #subject {
         width:100%;
     }
 }
 
 .user-content {
-    margin:10px 40px;
+    margin:20px 20px;
+
     textarea {
         background-color:floralwhite;
         resize:none;
-        height:290px;
-        width:100%;
+        width:96%;
         font-size:20px;
-        border:1px solid lightgray;
+        padding:20px 20px;
+        border:none;
+        top:0;
     }
+
+
 }
 
 .sendBtn {
-    width:100%;
+
     border-radius:20px;
-    position:relative;
-    top:0;
-    left:0;
+    position:absolute;
+    top:85%;
+    width:40%;
+    left:30%;
     font-size:30px;
-    margin:5px 0px;
+
+    animation: fade-in 1s ease-in;
 }
+
+@keyframes fade-in {
+    0% {
+        opacity:0;
+    }
+    25% {
+        opacity:0;
+    }
+    75% {
+        opacity:0.80;
+    }
+    100% {
+        opacity:1;
+        width:40%;
+    }
+    
+}
+
+
 .expand{
-    float:right;
+
+    z-index:200;
+}
+
+
+
+.inside-textarea .divBtn {
+    position:absolute;
+    top:5px;
+    right:0;
+}
+
+.inside-textarea .divBtn:hover {
+    color:red;
+
 }
