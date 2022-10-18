@@ -1,22 +1,50 @@
+div#about {
+    background-color: floralwhite;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+
+
 .about-container {
-    width:550px;
-    height:550px;
-    border-radius:50px;
-    background:rgba(#A9BCD0,.58);
+    width:30%;
+    height:60%;
     position:absolute;
     top:20%;
-    left:10%;
+    right:5%;
     padding:35px 30px;
-    box-shadow:-20px -5px 20px gray;
+
+    // box-shadow:20px 20px 100px black;
 
 }
 
 .about-heading,.about-subheading {
     text-align:center;
+
 }
 
 .about-text {
     margin:20px 0px;
     font-size:20px;
+    text-indent:20px;
+
+}
+
+.aboutme_img {
+    width:200px;
+    position:relative;
+    float:left;
+    margin:10px;
+    border-radius:50%;
+    shape-outside:circle();
+
+}
+
+h2 {
+    color:#042F4B;
+    letter-spacing:1.1px;
 }
 
