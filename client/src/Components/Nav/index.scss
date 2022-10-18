@@ -30,20 +30,34 @@
     }
 }
 
-/* Logo */
-
-img {
-    margin-left:20px;
-    width:50px;
-    margin-top:10px;
-}
 
 /* Navigation menu icons to navigate to different pages*/
 
 .about-icon, .project-icon, .demo-icon, .feedback-icon, .person-icon {
-    width:30px;
+
     height:30px;
+    transition:height 0.6s ease-in;
+
 }
+
+.about-icon{
+    margin-left:5px;
+}
+
+.project-icon{
+    margin-left:12px;
+}
+.demo-icon{
+
+}
+.feedback-icon{
+    margin-left:16px;
+}
+.person-icon{
+    margin-left:25px;
+}
+
+
 
 /* Navigation menu icons to navigate to different websites */
 
@@ -72,33 +86,42 @@ a {
     display:block;
     position:relative;
     text-decoration:none;
+    letter-spacing:1.5px;
+
+
+}
+
+.hideMe {
+    text-align:center;
+    letter-spacing:2px;
+    transition: all 0.3s ease-in;
+
+    position:relative;
+    opacity:0;
+}
+
+.about-icon:hover, .project-icon:hover, .demo-icon:hover, .feedback-icon:hover, .person-icon:hover {
+    height:35px;
     
 }
-
-a.active {
-    color:#2b2d42;
+.popup {
+    height:0px;
+    top:15px;
+    position:relative;
+    transition:all 1s ease-in;
+}
+li:hover {
+    .hideMe {
+        visibility:visible;
+        opacity:1;
+    }
+    .popup {
+        height:20px;
+        background-color:blue;
+    }
 }
 
-/* Setting a empty box beneath the hyperlink icons by default */
 
-nav ul li a::after{
-    content:'';
-    width:0;
-    height:4px;
-    position:absolute;
-    bottom:-5px;
-    left:50%;
-    border-radius:4px;
-    transform:translateX(-50%);
-    background:#2b2d42;
-    transition: width 0.3s;
-}
-
-/* Setting empty box beneath the hyperlink icons to increase width by 100% */
-
-nav ul li a:hover::after {
-    width:100%;
-}
 
 
     
