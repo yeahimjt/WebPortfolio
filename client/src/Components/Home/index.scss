@@ -9,12 +9,20 @@
 
 }
 
-body {
-
-    background-color: floralwhite;
+div#home {
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color: #fffaf0;
 
 }
-
+.about-nav {
+    a {
+        color: #FBBD0D;
+    }
+}
 h1 {
     font-size:55px;
     color: #042F4B;

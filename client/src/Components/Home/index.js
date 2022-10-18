@@ -35,6 +35,7 @@ function Home () {
     const [modalState, setModalState] = useState(false);
     return (
         <>
+            <div id="home">
                 <Navbar></Navbar>
                 <div style={{position:"absolute", top:"0", left:"0", width:"100vw", height:"100%"}}>
                 <Canvas shadows camera={{position:[2,2,5]}} className="home-canvas">
@@ -73,6 +74,8 @@ function Home () {
                     </button>
                     {modalState && <Modal closeModal={setModalState}/>}
                 </div>
+
+            </div>
         </>
     );
 }
