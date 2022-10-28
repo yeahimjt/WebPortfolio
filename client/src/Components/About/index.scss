@@ -10,15 +10,35 @@ div#about {
 
 
 .about-container {
-    width:30%;
-    height:60%;
-    position:absolute;
-    top:20%;
-    right:5%;
-    padding:35px 30px;
 
+    width:30%;
+    position:absolute;
+    top:23%;
+    left:5%;
+    padding:35px 30px;
+    animation: from-right 1s;
+    transition: all 1s
     // box-shadow:20px 20px 100px black;
 
+}
+
+@media screen and (max-width:90vw) {
+    .about-container {
+        background-color:blue;
+    }
+}
+
+@keyframes from-right {
+    0% {
+        transform:translateY(1000px);
+    }
+    50% {
+        transform:translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .about-heading,.about-subheading {
@@ -40,11 +60,75 @@ div#about {
     margin:10px;
     border-radius:50%;
     shape-outside:circle();
+    animation: grow 2s;
+    transition-delay:2s;
 
+}
+
+.skills-container {
+    width:55%;
+    height:65%;
+    padding:20px 0px 20px 0px;
+    position: absolute;
+    top:19%;
+    right:5%;
+    border-radius:40px;
+    background-color:#042F4B;
+    .skills-heading {
+        text-align:center;
+        font-size:30px;
+        color:white;
+
+    }
+    .skills-boxes {
+        background-color:blue;
+        display:flex;
+        justify-content:space-evenly;
+        margin: 30px 0px 30px 0px;
+        padding:10px 0px 10px 0px;
+        width:100%;
+        .skills-languages {
+            background-color:green;
+            width:45%;
+            height:35px;
+            text-align:center;
+            
+
+        }
+        .skills-frameworks {
+            background-color:red;
+            width:45%;
+            height:35px;
+            text-align:center;
+        }
+    }
+}
+@keyframes grow {
+    0% {
+       transform: rotate(250deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+       transform: rotate(0);
+    }
+}
+.aboutme_img:hover {
+    transform:scale(1.2) translateX(-10%) translateY(-5%);
 }
 
 h2 {
     color:#042F4B;
     letter-spacing:1.1px;
+}
+
+.spotify {
+    position:absolute;
+    bottom:10%;
+    right:5%;
+    width:20%;
+    background-color:yellow;
 }
 

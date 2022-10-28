@@ -1,0 +1,123 @@
+div#projects {
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color: #fffaf0;
+}
+
+.project-wrapper {
+    box-sizing: border-box;
+    width:90vw;
+    height:80%;
+    position:absolute;
+    top:12%;
+    left:5%;
+    display:flex;
+
+}
+.project-row {
+    display:grid;
+    grid-template-columns: 30vw 30vw 30vw;
+    padding:20px;
+    height:650px;
+}
+.project-item{
+    background-color: white;
+    height:90%;
+    width:430px;
+    margin:20px;
+    padding:10px;
+    border-radius:20px;
+    animation: grow-items 2s;
+    transition: all 1s;
+    box-shadow: 2px 20px 30px rgb(162, 160, 160);
+
+}
+
+@keyframes grow-items {
+    0% {
+        transform:scale(0);
+    }
+
+    100% {
+        transform:scale(1);
+    }
+}
+
+.project-item:hover {
+    transform:scale(1.1);
+}
+
+.card-header {
+    color:#262626;
+    font-size:35px;
+    position:relative;
+    text-align:center;
+}
+
+.temporary {
+    margin:20px;
+    height:275px;
+    width:450px;
+    position:relative;
+    top:-30px;
+    left:-30px;
+    background-color:darkgray;
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px;
+}
+.project-expand {
+    width:200px;
+    height:200px;
+    color:white;
+    background-color:blue;
+}
+.nerd4u {
+    max-width:100%;
+    max-height:120%;
+
+    height:275px;
+    object-fit:fill;
+    border-top-left-radius:20px;
+    border-top-right-radius:20px;
+    box-shadow:0px 5px 3px darkgray;
+}
+
+.card-content {
+    position:relative;
+
+    font-size:20px;
+    padding:20px;
+    transition: all 1s;
+}
+
+.card-github {
+
+    color:#00050F;
+    width:30px; 
+    height:30px;
+}
+.card-link {
+    color:#00050F ;
+    width:30px; 
+    height:30px;
+    margin-left:10px;
+}
+.links {
+    width:100px;
+    position:relative;
+    top:-20px;
+    left:20px;
+    display:flex;
+}
+
+a:hover {
+    .card-github,.card-link {
+        color:#F2294E;
+        width:31px;
+        height:31px;
+    }
+    
+}

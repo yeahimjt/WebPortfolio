@@ -1,14 +1,17 @@
-import './index.scss'
-import { useRef, useState, Suspense } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-
-import Navbar from '../Nav'
+import './index.scss';
+import { useRef, useState, Suspense, useEffect,React } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import Navbar from '../Nav';
 import Modal from "../Modal";
-
-import { Backdrop, useGLTF, OrbitControls, softShadows } from '@react-three/drei'
+import config from 'react-reveal/globals';
+import Roll from 'react-reveal/Roll';
+import Loading from '../Load/Load';
+import { Backdrop, useGLTF, OrbitControls, softShadows } from '@react-three/drei';
+import {FaGithubSquare} from 'react-icons/fa';
+import {BsLinkedin} from 'react-icons/bs';
 
 softShadows();
-
+config({ssrFadeout: true})
 function CoinLogo(props) {
     const { nodes, materials } = useGLTF('/logo-updated.gltf')
     const group = useRef();
@@ -16,29 +19,31 @@ function CoinLogo(props) {
       group.current.rotation.y += 0.01;
     })
     return (
-
-      <group  ref={group}{...props} dispose={null}>
-        <mesh castShadow geometry={nodes.Cylinder.geometry} material={materials['Material.002']} rotation={[Math.PI / 2, 0, 0]} scale={[1.34, 0.19, 1.34]} />
-        <mesh castShadow geometry={nodes.Text.geometry} material={materials['Material.003']} position={[-0.33, -0.02, 0.16]} rotation={[Math.PI / 2, 0, 0]} />
-        <mesh castShadow geometry={nodes.Text001.geometry} material={materials['Material.003']} position={[-0.09, -0.47, 0.16]} rotation={[Math.PI / 2, 0, 0]} />
-        <mesh castShadow geometry={nodes.Text002.geometry} material={materials['Material.004']} position={[-1.01, -0.01, 0.14]} rotation={[Math.PI / 2, 0, 0]} />
-        <mesh castShadow geometry={nodes.Text003.geometry} material={materials['Material.004']} position={[-0.89, -0.1, 0.14]} rotation={[Math.PI / 2, 0, 0]} />
-        <mesh castShadow geometry={nodes.Text004.geometry} material={materials['Material.004']} position={[-1.04, -0.19, 0.14]} rotation={[Math.PI / 2, 0, 0]} />
-        <mesh castShadow geometry={nodes.Text005.geometry} material={materials['Material.004']} position={[0.15, -0.91, 0.16]} rotation={[Math.PI / 2, 0, 0]} />
-        <mesh castShadow geometry={nodes.Cylinder001.geometry} material={materials['Material.003']} rotation={[Math.PI / 2, 0, 0]} scale={[1.34, 0.19, 1.34]} />
-        <mesh castShadow geometry={nodes.Text006.geometry} material={materials['Material.004']} position={[0.8, 0.12, -0.12]} rotation={[-Math.PI / 2, Math.PI / 2, 0]} scale={-1} />
-      </group>
+    
+            <group  ref={group}{...props} dispose={null}>
+                <mesh castShadow geometry={nodes.Cylinder.geometry} material={materials['Material.002']} rotation={[Math.PI / 2, 0, 0]} scale={[1.34, 0.19, 1.34]} />
+                <mesh castShadow geometry={nodes.Text.geometry} material={materials['Material.003']} position={[-0.33, -0.02, 0.16]} rotation={[Math.PI / 2, 0, 0]} />
+                <mesh castShadow geometry={nodes.Text001.geometry} material={materials['Material.003']} position={[-0.09, -0.47, 0.16]} rotation={[Math.PI / 2, 0, 0]} />
+                <mesh castShadow geometry={nodes.Text002.geometry} material={materials['Material.004']} position={[-1.01, -0.01, 0.14]} rotation={[Math.PI / 2, 0, 0]} />
+                <mesh castShadow geometry={nodes.Text003.geometry} material={materials['Material.004']} position={[-0.89, -0.1, 0.14]} rotation={[Math.PI / 2, 0, 0]} />
+                <mesh castShadow geometry={nodes.Text004.geometry} material={materials['Material.004']} position={[-1.04, -0.19, 0.14]} rotation={[Math.PI / 2, 0, 0]} />
+                <mesh castShadow geometry={nodes.Text005.geometry} material={materials['Material.004']} position={[0.15, -0.91, 0.16]} rotation={[Math.PI / 2, 0, 0]} />
+                <mesh castShadow geometry={nodes.Cylinder001.geometry} material={materials['Material.003']} rotation={[Math.PI / 2, 0, 0]} scale={[1.34, 0.19, 1.34]} />
+                <mesh castShadow geometry={nodes.Text006.geometry} material={materials['Material.004']} position={[0.8, 0.12, -0.12]} rotation={[-Math.PI / 2, Math.PI / 2, 0]} scale={-1} />
+            </group>
+        
     )
   }
 
 function Home () {
     const [modalState, setModalState] = useState(false);
+
     return (
         <>
             <div id="home">
                 <Navbar></Navbar>
-                <div style={{position:"absolute", top:"0", left:"0", width:"100vw", height:"100%"}}>
-                <Canvas shadows camera={{position:[2,2,5]}} className="home-canvas">
+                <div style={{position:"relative", top:"0", left:"0", width:"100vw", height:"100%"}}>
+                <Canvas shadows camera={{position:[1,2,5]}} className="home-canvas">
                     <ambientLight position={[10,2,5]} intensity={0.3}/>
                     <directionalLight 
                         castShadow
@@ -51,7 +56,9 @@ function Home () {
                         shadow-camera-right={10}
                         shadow-camera-top={10}
                         shadow-camera-bottom={-10}/>
+
                     <CoinLogo position={[2.7,0.5,0.5]}/>
+
                     <pointLight position={[100,10,5]} intensity={5}/>
                     <pointLight position={[-100,-10,-5]} intensity={5}/>
                     <group>
@@ -59,9 +66,9 @@ function Home () {
                             <planeBufferGeometry attach="geometry" args={[200,100]}/>
                             <shadowMaterial attach="material" opacity={0.1} color={'black'}/>
                         </mesh>
-                    </group>
-                    <OrbitControls></OrbitControls>
-                </Canvas>
+                    </group> 
+
+                </Canvas> 
                 </div>
                 <div className="heading-container">
                     <h5>Hello, I'm</h5>
@@ -74,8 +81,19 @@ function Home () {
                     </button>
                     {modalState && <Modal closeModal={setModalState}/>}
                 </div>
+                <div className="heading-links">
+                    <a className="heading-linkedin" target="_blank" rel="noreferrer" href="https://linkedin.com/in/jonathanandrewtrevino">
+                        <div><BsLinkedin className="linkedin-icon"/></div>
+                    </a>
+
+                    <a className="heading-github" target="_blank" rel="noreferrer" href="https://github.com/yeahimjt?tab=repositories">
+                        <div><FaGithubSquare className="github-icon"/></div>
+                    </a>
+
+                </div>
 
             </div>
+
         </>
     );
 }

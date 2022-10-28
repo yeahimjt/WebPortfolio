@@ -12,11 +12,11 @@
 .nav-bar {
     display:flex;
     position:absolute;
-    justify-content:space-between;
+    justify-content:center;
     align-items:center;
     height:50px;
     padding: 10px 35px;
-    z-index:100;
+    z-index:90;
     width:95vw;
     animation: nav-load 300ms ease-in;
 }
@@ -61,10 +61,7 @@
 
 /* Navigation menu icons to navigate to different websites */
 
-.linkedin-icon, .github-icon {
-    width:20px;
-    height:20px;
-}
+
 
 /* Removing bullet points from ul list */
 
@@ -95,29 +92,18 @@ a {
     text-align:center;
     letter-spacing:2px;
     transition: all 0.3s ease-in;
-
     position:relative;
     opacity:0;
 }
 
-.about-icon:hover, .project-icon:hover, .demo-icon:hover, .feedback-icon:hover, .person-icon:hover {
-    height:35px;
-    
-}
-.popup {
-    height:0px;
-    top:15px;
-    position:relative;
-    transition:all 1s ease-in;
+
+p {
+    font-size:20px;
+    transition:all 0.3s;
 }
 li:hover {
-    .hideMe {
-        visibility:visible;
-        opacity:1;
-    }
-    .popup {
-        height:20px;
-        background-color:blue;
+    p {
+        font-size:22px;
     }
 }
 

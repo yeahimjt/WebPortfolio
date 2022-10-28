@@ -1,7 +1,7 @@
 import "./index.scss";
 import {React,useState} from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faExpand} from "@fortawesome/free-solid-svg-icons";
+
 
 function Modal({closeModal}) {
 
@@ -12,58 +12,49 @@ function Modal({closeModal}) {
     }
 
     return (
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onClick={() => closeModal(false)}>&times;</span>
-                <p className="modal-heading">Fill out an e-mail to send to me</p>
-                <hr></hr>
+        <>
+        <div id="myModal" className="modal">
+            <div className="modal-content">
+                <span className="close" onClick={() => closeModal(false)}>&times;</span>
+                <p className="modal-heading">Get in touch.</p>
                 <form>
                     <div className="user-name">
-                        <label for="fname">
-                            First name
-                        <input type="text" id="fname"></input>
-                        </label>
-                        <label for="lname">
-                            Last name
-                        <input type="text" id="lname"></input>
-                        </label>
+                        <div className="form-div">
+                            <input className="form-input first-name" type="text" id="fname" placeholder="First name"></input>
+                            <label htmlFor="fname" className="form-label">
+                                First name
+                            </label>
+                        </div>
+                        <div className="form-div">
+                            <input className="form-input last-name" type="text" id="lname" placeholder="Last name"></input>
+                            <label htmlFor="lname" className="form-label">
+                                Last name
+                            </label>
+                        </div>
                     </div>
-                    <div className="user-email">
-                        <label for="email">
-                            Email<br/>
-                        <input type="text" id="email"></input>
-                        </label>
+                    <div>
+                        <div className="form-div">
+                            <input className="form-input" placeholder="Email"></input>
+                            <label className="form-label">Email</label>
+                        </div>
                     </div>
-                    <div className="user-subject">
-                        <label for="subject">
-                            Subject<br/>
-                        <input type="text" id="subject"></input>
-                        </label>
+                    <div>
+                        <div className="form-div">
+                            <input className="form-input" placeholder="Subject"></input>
+                            <label className="form-label">Subject</label>
+                        </div>
                     </div>
-                    <div className="user-content">
-                        <label for="content">
-                            Content<br/>
-                        <div className="inside-textarea" style={{
-                                    width: isActive ? '60%' : '100%',
-                                    position: isActive ? 'absolute' : 'relative',
-                                    top: isActive ? '16%' : '', 
-                                    left: isActive ? '20%' : '',
-                            }}> 
-                            <textarea type="freeform" id="content" 
-                                style={{
-                                    height: isActive ? '565px' : '290px',
-                                }}>
-
-                            </textarea>
-                            <div className="divBtn" onClick={handleClick}><FontAwesomeIcon className="expand"icon={faExpand}/></div>
-                        </div>   
-                        </label>
+                    <div>
+                        <div className="form-div">
+                            <textarea className="form-text-area" placeholder="Content"></textarea>
+                            <label className="form-label-text-area">Content</label>
+                        </div>
                     </div>
-                    <button className="sendBtn"><p>Send</p></button>
-                    
+                    <button className="sendBtn" type="submit"><p>Send</p></button>
                 </form>
             </div>
         </div>
+        </>
     );
 
 }

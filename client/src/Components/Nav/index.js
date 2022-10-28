@@ -9,8 +9,7 @@ import {faFolder} from '@fortawesome/free-solid-svg-icons'
 import {faLaptopCode} from '@fortawesome/free-solid-svg-icons'
 import {faStar} from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import {FaGithubSquare} from 'react-icons/fa'
-import {BsLinkedin} from 'react-icons/bs'
+
 
 
 const Navbar = () => {
@@ -59,8 +58,8 @@ const Navbar = () => {
                 </li>
                 <li>
                     <div className="nav-item">
-                    <NavLink exact="true" activeclassname="active" className="demo" to="/demos">
-                        <p className="nav-item" style={{color: aTag}}>Demo</p>
+                    <NavLink exact="true" activeclassname="active" className="skills" to="/skills">
+                        <p className="nav-item" style={{color: aTag}}>Skills</p>
                     </NavLink>
 
                     </div>
@@ -75,14 +74,7 @@ const Navbar = () => {
             </ul>
             
         </nav>
-        <ul>
-                <li>
-                    <a  style={{color:aTag}} target="_blank" rel="noreferrer" href="https://linkedin.com/in/jonathanandrewtrevino"><BsLinkedin className="linkedin-icon"/></a>
-                </li>
-                <li>
-                    <a style={{color:aTag}} target="_blank" rel="noreferrer" href="https://github.com/yeahimjt?tab=repositories"><FaGithubSquare className="github-icon"/></a>
-                </li>
-            </ul>
+        
     </div>
     );
 }
