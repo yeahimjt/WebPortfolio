@@ -1,3 +1,6 @@
+
+/* Background of entire page */
+
 .background {
     height:91.9vh;
 }
@@ -5,12 +8,16 @@
 .heading-container{
     position:absolute;
     top:40%;
-    left:10%;
     opacity:0;
     animation:from-left 1s;
     animation-delay:1s;
     transition-property:all;
     animation-fill-mode:forwards;
+}
+
+.heading-content {
+    position:relative;
+
 }
 
 @keyframes from-left {
@@ -31,11 +38,11 @@
 }
 
 div#home {
+    position:absolute;
     top:0;
     left:0;
     width:100%;
     height:100%;
-    position:absolute;
     background-color: #fffaf0;
 
 }
@@ -52,7 +59,8 @@ h1 {
 
 h4 {
     font-size:25px;
-    text-align:center;
+    position:relative;
+    left:90px;
     color: #262626;
     opacity:0.8;
     margin:-5px 0px 0px 0px;
@@ -67,14 +75,16 @@ h5 {
    
 }
 
-button {
-    position:relative;
+button#myBtn {
+    display:flex;
+    align-self:center;
+    justify-content:center;
     width:120px;
-    height:40px;
+    height:35px;
     border-radius:4px;
     border:none;
-    font-size:15px;
     left:38%;
+    padding-top:5px;
     margin: 20px 0px 0px 0px;
     background: #F2294E;
     p {
@@ -82,13 +92,18 @@ button {
     }
 }
 
-button:hover {
+button#myBtn:hover {
     background:#052446;
     cursor:pointer;
     p {
         color:white;
     }    
+    
 }   
+button#myBtn:active {
+
+    scale:(0.9);
+}
 
 .heading-links {
     position:absolute;
@@ -131,3 +146,77 @@ button:hover {
     
 }
 
+@keyframes on-click {
+    0% {
+        transform:scale(1)
+    }
+    50% {
+        transform:scale(0.2)
+    }
+    100% {
+        transform:scale(1)
+    }
+}
+
+/* Media Queries */
+
+
+    /* ----------- Laptops ----------- */
+    @media screen 
+    and (min-device-width: 769px) 
+{ 
+        .heading-container {
+            left:10%;
+
+        }
+        button#myBtn {
+            position:relative;
+            display:flex;
+        }
+    }
+
+    /* Tablets */
+
+
+
+    /* Phones (Portrait) / Tablets */
+
+    @media only screen and (max-width:768px) 
+
+    {
+            div#home {
+                overflow:hidden;
+            }
+
+            .heading-container{
+
+                width:100vw;
+                height:180px;
+                left:5%;
+                margin:auto;
+                h5 {
+                    font-size:4vw;
+                }
+                h1{
+                    font-size:8vw;
+                }
+                h4 {
+                    left:10%;
+                    font-size:3.9vw;
+                }
+            }
+
+            button#myBtn {
+                position:relative;
+                top:-12px;
+                left:30%;
+            }
+
+            .home-canvas {
+                visibility: hidden;
+            }
+
+           
+
+    }
+    

@@ -3,17 +3,14 @@ import { useRef, useState, Suspense, useEffect,React } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import Navbar from '../Nav';
 import Modal from "../Modal";
-import config from 'react-reveal/globals';
-import Roll from 'react-reveal/Roll';
-import Loading from '../Load/Load';
+
 import { Backdrop, useGLTF, OrbitControls, softShadows } from '@react-three/drei';
 import {FaGithubSquare} from 'react-icons/fa';
 import {BsLinkedin} from 'react-icons/bs';
 
 softShadows();
-config({ssrFadeout: true})
 function CoinLogo(props) {
-    const { nodes, materials } = useGLTF('/logo-updated.gltf')
+    const { nodes, materials } = useGLTF('/coin.gltf')
     const group = useRef();
     useFrame(() => {
       group.current.rotation.y += 0.01;
@@ -57,7 +54,7 @@ function Home () {
                         shadow-camera-top={10}
                         shadow-camera-bottom={-10}/>
 
-                    <CoinLogo position={[2.7,0.5,0.5]}/>
+                    <CoinLogo className="coin-logo" position={[2.7,0.5,0.5]}/>
 
                     <pointLight position={[100,10,5]} intensity={5}/>
                     <pointLight position={[-100,-10,-5]} intensity={5}/>
@@ -71,16 +68,18 @@ function Home () {
                 </Canvas> 
                 </div>
                 <div className="heading-container">
-                    <h5>Hello, I'm</h5>
-                    <h1>Jonathan Andrew Trevino</h1>
-                    <h4 className="h4-text">Full Stack Software Developer/Engineer</h4>
-                    <button id="myBtn" onClick={() => {
-                        setModalState(true);
-                    }}>
-                        <p>Contact me</p>
-                    </button>
-                    {modalState && <Modal closeModal={setModalState}/>}
+                    <div className="heading-content">
+                        <h5>Hello, I'm</h5>
+                        <h1>Jonathan Andrew Trevino</h1>
+                        <h4 className="h4-text">Full Stack Software Developer/Engineer</h4>
+                            <a href="/contact"><button id="myBtn">
+                                <p>Contact me</p>
+                            </button></a>
+                        
+                    </div>
+                    
                 </div>
+                {modalState && <Modal closeModal={setModalState}/>}
                 <div className="heading-links">
                     <a className="heading-linkedin" target="_blank" rel="noreferrer" href="https://linkedin.com/in/jonathanandrewtrevino">
                         <div><BsLinkedin className="linkedin-icon"/></div>
