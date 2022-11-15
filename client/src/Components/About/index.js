@@ -96,7 +96,11 @@ const About = () =>  {
                                     <div className="box">
                                         <DiReact className="java-icon"></DiReact>
                                         React
-                                    </div>                                    
+                                    </div>   
+                                    <div className="box">
+
+                                        Express JS
+                                    </div>                                   
                                 </div>
                             </Collapsible>
                         </div>

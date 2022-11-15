@@ -1,5 +1,5 @@
 import './index.scss'
-import  React ,{Component} from "react"
+import  React ,{Component, useState} from "react"
 import Navbar from '../Nav'
 import axios from 'axios'
 
@@ -46,7 +46,7 @@ export default class Form extends Component {
             content:e.target.value
         })
     }
-
+    
     // End of Handle Inputs
 
     formSubmit=(e)=> {
@@ -81,94 +81,112 @@ export default class Form extends Component {
             content:''
         })
 
-        setTimeout(()=> {
-            this.setState({
-                sent:false
-            })
-        },3000)
+        
     }
     
 
     render() {
     return (
         <>
+            <div id="contact">
             <Navbar/>
-            <div className="contact-container">
-                <div className="flex-box">
-                    <div className="flex-item">
-                    <p className="contact-heading">Get in touch.</p>
-                    </div>
-                    <div className="flex-item">
-                    <form  className="contact-form" onSubmit={this.formSubmit}>
-                        <div className="user-name">
-                            <div className="form-div">
-                                <input className="form-input first-name" 
-                                type="text"  
-                                id="fname" 
-                                name="fname" 
-                                value={this.state.fname}
-                                onChange={this.handleFirstName}
-                                placeholder="First name" ></input>
-                                <label htmlFor="fname" className="form-label">
-                                    First name
-                                </label>
-                                {/* Somehow display what user submits to ensure it works */}
-                            </div>
-                            <div className="form-div">
-                                <input className="form-input last-name" 
-                                type="text"  
-                                id="lname" 
-                                name ="lname" 
-                                value={this.state.lname}
-                                onChange={this.handleLastName}
-                                placeholder="Last name" ></input>
-                                <label htmlFor="lname" className="form-label">
-                                    Last name
-                                </label>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="form-div">
-                                <input className="form-input" 
-                                placeholder="Email" 
-                                name="email"
-                                value={this.state.email}
-                                onChange={this.handleEmail}></input>
-                                <label className="form-label" >Email</label>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="form-div">
-                                <input className="form-input" 
-                                placeholder="Subject" 
-                                name="subject"
-                                value={this.state.subject}
-                                onChange={this.handleSubject}></input>
-                                <label className="form-label" >Subject</label>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="form-div">
-                                <textarea className="form-text-area" 
-                                placeholder="Content" 
-                                name="content"
-                                value={this.state.content}
-                                onChange={this.handleContent}></textarea>
-                                <label className="form-label-text-area">Content</label>
-                            </div>
-                        </div>
-                        <button className="sendBtn" type="submit">Submit</button>
-                        
 
-                        
-                    </form>
+            <div className="bubble-items"></div>
+            <div className="bubble-items"></div>
+            <div className="bubble-items"></div>
+            <div className="bubble-items"></div>
+            <div className="bubble-items"></div>
+            <div className="bubble-items"></div>
+            <div className="bubble-items" id="bubble-contact1"></div>
+            <div className="bubble-items" id="bubble-contact2"></div>
+            <div className="bubble-items" id="bubble-contact3"></div>
+            <div className="bubble-items" id="bubble-contact4"></div>
+            <div className="bubble-items" id="bubble-contact5"></div>
+      
+
+
+                    <div className="speech-container">
+                        <div className="speech-bubble">
+                            <p className="contact-heading">Get in touch.</p>
+                        </div>
                     </div>
-          
+                    <div className={this.state.sent ? "response appear" : "reponse"}>
+                        <div className={this.state.sent ? "response-message appear" : "response-message"}>
+                            Delivered. Thank you for the message, I will get in contact with you shortly!
+                        </div>
+                    </div>
+                    <div className="form">
+                        <form  className="contact-form" onSubmit={this.formSubmit}>
+                            <p className="info">Please fill in all required text fields to successfully submit email.</p>
+                            <div className="user-name">
+                                <div className="form-div">
+                                    <input className="form-input first-name" 
+                                    type="text"  
+                                    id="fname" 
+                                    name="fname" 
+                                    value={this.state.fname}
+                                    onChange={this.handleFirstName}
+                                    placeholder="First name" ></input>
+                                    <label htmlFor="fname" className="form-label">
+                                        First name<p id="highlighted">*</p>
+                                    </label>
+                                    {/* Somehow display what user submits to ensure it works */}
+                                </div>
+                                <div className="form-div">
+                                    <input className="form-input last-name" 
+                                    type="text"  
+                                    id="lname" 
+                                    name ="lname" 
+                                    value={this.state.lname}
+                                    onChange={this.handleLastName}
+                                    placeholder="Last name" ></input>
+                                    <label htmlFor="lname" className="form-label">
+                                        Last name<p id="highlighted">*</p>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="form-div">
+                                    <input className="form-input" 
+                                    placeholder="Email" 
+                                    name="email"
+                                    value={this.state.email}
+                                    onChange={this.handleEmail}></input>
+                                    <label className="form-label" >Email<p id="highlighted">*</p></label>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="form-div">
+                                    <input className="form-input" 
+                                    placeholder="Subject" 
+                                    name="subject"
+                                    value={this.state.subject}
+                                    onChange={this.handleSubject}></input>
+                                    <label className="form-label" >Subject<p id="highlighted">*</p></label>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="form-div">
+                                    <textarea className="form-text-area" 
+                                    placeholder="Content" 
+                                    name="content"
+                                    value={this.state.content}
+                                    onChange={this.handleContent}></textarea>
+                                    <label className="form-label-text-area">Content<p id="highlighted">*</p></label>
+                                </div>
+                            </div>
+                            <button className="sendBtn" type="submit">Submit</button>
+                            
+
+                            
+                        </form>
+                    </div>
                 </div>
-            </div>
+
+
 
         </>
-    );
+    )
 
 }
 

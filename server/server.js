@@ -12,7 +12,7 @@ app.use(cors());
 var nodemailer = require('nodemailer')
 app.post('/api/send-email', (req,res)=> {
     let data = req.body
-    console.log("HERE")
+
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         port:465,
@@ -21,16 +21,23 @@ app.post('/api/send-email', (req,res)=> {
           pass: 'alfhcmtrkdxkltju'
         }
       });
-      
+
+
       var mailOptions = {
         from: data.email,
         to: 'jonathanandrewtrevino@gmail.com',
         subject: "WEB-CONTACT " + data.subject,
         html: `
-            <h3>${data.fname} ${data.lname}</h3>
-            <h1>${data.email}</h1>
-            <h1>Message</h1>
-            <p>${data.content}</p>
+            <h3>Contact Information</h3>
+              <ul>
+                <li>Name: ${data.fname} ${data.lname}</li>
+                <li>Email: ${data.email}</li>
+              </ul>
+            <h3>Message</h3>
+              <ul>
+                <li>${data.subject}</li>
+                <li>${data.content}</li>
+              </ul>
         `
         
         

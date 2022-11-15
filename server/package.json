@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "express": "^4.18.2",
-    "nodemailer": "^6.8.0"
+    "nodemailer": "^6.8.0",
+    "profanity-filter": "^0.2.1"
   }
 }

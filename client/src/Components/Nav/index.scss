@@ -33,29 +33,12 @@
 
 /* Navigation menu icons to navigate to different pages*/
 
-.about-icon, .project-icon, .demo-icon, .feedback-icon, .person-icon {
-
-    height:30px;
-    transition:height 0.6s ease-in;
-
+.nav-icon {
+    display:none;
+    font-size:30px;
 }
 
-.about-icon{
-    margin-left:5px;
-}
 
-.project-icon{
-    margin-left:12px;
-}
-.demo-icon{
-
-}
-.feedback-icon{
-    margin-left:16px;
-}
-.person-icon{
-    margin-left:25px;
-}
 
 
 
@@ -88,6 +71,10 @@ a {
 
 }
 
+.active {
+    color:white;
+}
+
 .hideMe {
     text-align:center;
     letter-spacing:2px;
@@ -107,7 +94,55 @@ li:hover {
     }
 }
 
+.checkbtn {
+    font-size:30px;
+    color:black;
+    float:right;
+    position:absolute;
+    right:80px;
+    cursor:pointer;
+    display:none;
+}
 
+#check {
+    display:none;
+}
+
+@media screen and (max-width:680px) {
+    
+
+    .nav-icon {
+        display:block;
+        position:relative;
+        left:-20px;
+        font-size:6vw;
+        top:20px;
+    }
+    .nav-text {
+        display:none;
+    }
+}
+
+@media screen and (max-width:480px) {
+    
+
+    .nav-icon {
+        display:block;
+        position:relative;
+        left:-20px;
+        font-size:5vw;
+    }
+    .nav-text {
+        display:none;
+    }
+    ul {   
+        li {
+        position:relative;
+        left:-10px;
+        margin:0px 20px;
+        }
+    }
+}
 
 
     

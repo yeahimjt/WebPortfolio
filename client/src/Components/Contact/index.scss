@@ -1,26 +1,215 @@
-.contact-container{
+div#contact {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background: linear-gradient(120deg, #485563 40%, #1e242a 90%);
+
+}
+
+#bubble-contact1 {
+    background:radial-gradient(circle at bottom right, #37393c 50%,#617183 100%);
+    filter:blur(7px);
+    top:10%;
+    left:16%;
+    animation: move-around-1 25s infinite;
+    scale:(0.2);
+    z-index:0;
+}
+#bubble-contact2 {
+    background:radial-gradient(circle at bottom right, #323a43 50%,#5e6977 100%);
+
+    filter:blur(7px);
+    top:10%;
+    left:46%;
+    animation: move-around-3 18s infinite;
+    scale:(0.4);
+    z-index:0;
+}
+#bubble-contact3 {
+    background:radial-gradient(circle at bottom right, #323a43 50%,#5e6977 100%);
+    box-shadow: #1e242a 20px 20px 40px;
+    filter:blur(7px);
+    top:-10%;
+    left:-5%;
+    animation: move-around 20s infinite;
+    scale:(0.4);
+    z-index:110;
+}
+#bubble-contact4 {
+    
+}
+#bubble-contact5 {
+    
+}
+
+// Everything to do with contact container (i.e. everything displayed in contact 
+
+.contact-container {
     position:absolute;
     top:10vh;
     border-radius:20px;
-    padding:20px;
-
-    width:100%;
-    height:700px;
+    z-index:100;
     transition: fade-in 3s;
     overflow:hidden;
+    background-color: white;
 
-    .contact-heading {
 
-        position:relative;
-        z-index:5;
+}
+.speech-container {
+    width:50%;
+    position:relative;
+    top:12%;
+    left:2%;
+    animation:grow-width 1s ease-in;
+}
+
+@keyframes grow-width {
+    0% {
+        width:0px;
+        transform:scale(0.5);
+        z-index:90;
+    }   
+    100% {
+        width:50%;
+        transform:scale(1);
+        z-index:90;
+
+    } 
+}
+
+@keyframes grow-width-response {
+    0% {
+        transition:translateX(-1000px);
     }
+    100% {
+        transition:translateX(0px);
+    }
+}
+@keyframes reveal {
+    0% {
+        color:transparent;
+    }
+    100% {
+        color:white;
+        text-shadow:rgba(0, 0, 0, 0.71) 5px 5px 10px;
 
-    .form-div {
-        margin:5px;
-        transition:all 0.5s;
-        width:98%;
-        animation: fade-up 1s ease-in;
+    }
+}
+.speech-bubble {
+    position: relative;
+    background: rgba(90, 200, 250,0.9);
+    border-radius: .4em;
+    z-index:8;
+    animation-fill-mode: forwards;
+    height:8vw;
+    .contact-heading {
+        top:5px;
+        text-align:center;
+        font-size:5.5vw;
+        align-self:center;
+        animation:reveal 1s ease-in;
+        animation-delay:1s;
+        animation-fill-mode: forwards;
+        color:transparent;
+
+
+    }
+}
+
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 32px solid transparent;
+    border-left-color: rgba(90, 200, 250,0.9);
+    border-right: 0;
+    border-bottom: 0;
+    margin-top: -16px;
+    margin-right: -32px;
+
+}
+
+
+        
+.form{
+    z-index:100;
+    position:absolute;
+    top:12%;
+    left:57%;
+    width:35%;
+
     
+}
+.contact-form {
+    background-color:white;
+    width:100%;
+    padding:45px;
+}
+  
+
+
+.contact-heading {
+color:#262626;
+position:relative;
+z-index:5;
+
+}
+
+.form-div {
+    margin:5px;
+    transition:all 0.5s;
+    width:98%;
+    animation: fade-up 1s ease-in;
+
+}
+
+.response {
+    width:35%;
+    background-color: rgba(76, 217, 100,0.9);
+    position:absolute;
+    top:30%;
+    left:2%;
+    padding: 20px 0px 20px 20px;
+    z-index:100;
+    visibility:hidden;
+    animation:grow-width-response 3s ease-in;
+   
+
+}
+.response-message {
+    font-size:20px;
+    align-self:center;
+    color:transparent;
+   
+}
+
+.response-message:after {
+    content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: rgba(76, 217, 100,0.9);
+	border-left: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+.appear {
+    visibility:visible;
+    animation:grow-width-response 1.5s ease-in;
+    .response-message {
+        animation:reveal 1s ease-in;
+
+        animation-fill-mode: forwards;
+
     }
 }
 .output {
@@ -28,29 +217,6 @@
     top:50%;
     left:50%;
 }
-
-
-
-
-.flex-box {
-    display:flex;
-    justify-content:space-evenly;
-}
-.flex-item:nth-child(1) {
-    width:50vw;
-    align-self:center;
-
-    .contact-heading {
-        text-align:center;
-        font-size:5.5em;
-    }
-}
-
-.flex-item:nth-child(2) {
-    width:45vw;
-    margin:50px;
-}
-
 
 
 .form-label {
@@ -61,7 +227,7 @@
     font-size:1.2em;
     opacity:0.7;
     pointer-events:none;
-
+    
 }
 .form-label-text-area {
     display:block;
@@ -77,6 +243,10 @@
 .form-input {
     padding:5px;
     border-color:gray;
+
+    background: radial-gradient(circle 150px,rgba(255, 255, 255,1),rgba(255,255,255,0.4));
+
+
     border-style: none none solid none;
     box-shadow:none;
     outline:none;
@@ -94,12 +264,26 @@
     border-style: solid solid solid solid;
     outline:none;
     border-color:gray;
+    background: radial-gradient(circle 300px,rgba(255, 255, 255,1),rgba(255,255,255,0.4));
+
     padding:5px;
     font-size:18px;
     resize:none;
 }
+.form-label-text-area {
+    display:flex;
+}
+
+#highlighted {
+    color:red;
+    position:relative;
+    left:8px;
+    top:4px;
+}
 .form-text-area:focus {
-    border-color:red;
+
+    border-color: red;
+    box-shadow:#1e242a 0px 5px 20px;
 }
 .user-name {
     display:flex;
@@ -109,14 +293,19 @@
         width:90%;
     }
 }
-
+.form-label {
+    display:flex;
+}
 .form-input::placeholder,
 .form-text-area::placeholder {
     color:transparent;
 }
 
 .form-input:focus {
-    border-color:red;
+    border-bottom-color:red;
+    border-style:none none solid none;
+    box-shadow:#1e242a 0px 5px 20px;
+
 }
 .form-div:focus-within {
     transform:scale(1.1);
@@ -124,7 +313,9 @@
 
 .form-input:focus + .form-label,
 .form-input:not(:placeholder-shown) + .form-label {
-    transform:translateY(-2.5em);
+    transform:translateY(-2.9em);
+
+
 }
 
 .form-text-area:focus + .form-label-text-area,
@@ -135,7 +326,7 @@
 
 
 .sendBtn {
-    margin-top:10px;
+    margin-top:-5px;
     width:97%;
     position:relative;
     left:0px;
@@ -145,9 +336,9 @@
     border-radius:4px;
     border:none;
     font-size:15px;
-    p {
-        color:white;
-    }
+    color:white;
+    font-size:20px;
+    letter-spacing: 2px;
 
 }
 
@@ -168,6 +359,34 @@ span:hover {
     transform:scale(2.5);
 }
 
+p.info {
+    position:relative;
+    top:-18px;
+    opacity:0.6;
+    font-style:italic;
+}
+
+@keyframes scale-down {
+    0% {
+        transform:scale(1.8) translatex(1000px);
+    }
+    100% {
+        transform:scale(1) translateX(0px);
+    }
+}
+
+@keyframes from-right {
+    0% {
+
+        transform: scale(0.5) translateX(430px);
+        opacity:1;
+    }
+    100% {
+        transform:scale(1) translateX(0px);
+        opacity:1;
+    }
+}
+
 @keyframes fade-up {
     0% {
         opacity:0;
@@ -183,15 +402,88 @@ span:hover {
     }
 }
 
-@media only screen and (max-width:768px)  {
-    .modal 
-    {
-        left:-5%;
+@media only screen and (max-width:1180px) {
+    div#contact {
+        height:120vh;
+        overflow-y:hidden;
+        overflow-x:hidden;
     }
-    .modal-content {
-        height:700px;
+    .speech-container {
+        width:100%;
+        position:absolute;
+        left:0;
+        top:80px;
+        .speech-bubble {
+            width:80%;
+            margin:0 auto;
+            
+        }
+      
     }
-    .modal-heading {
-        font-size:2em;
+    .response {
+        top:17%;
+        left:10%;
+        width:78%;
+        .response-message {
+            font-size:2.2vw;
+        }
     }
+    .form {
+        position:relative;
+        top:26%;
+        width:100%;
+        left:0;
+
+    }
+    .contact-form {
+        width:75%;
+
+        margin:0 auto;
+    }
+    #bubble-contact3 {
+        visibility:hidden;
+    }
+
 }
+
+@media only screen and (max-width:768px)  {
+
+    div#contact {
+        height:150vh;
+        overflow-y:hidden;
+    }
+    .speech-container {
+        top:8%;
+        left:-15px;
+    }
+    .speech-bubble {
+    
+        width:80vw;
+        height:5em;
+        left:0;
+        .contact-heading{
+            top:20%;
+            font-size:8vw;
+        }
+    }
+    .response {
+        top:15%;
+        left:7%;
+        .response-message {
+            font-size:4vw;
+        }
+    }
+    .form {
+        top:24%;
+        left:-10px;
+    }
+
+  
+
+
+
+
+
+   
+}
+

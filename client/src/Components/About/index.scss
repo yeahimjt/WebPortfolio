@@ -85,6 +85,8 @@ div#about {
 
 }
 
+
+
 .second-bubble {
     z-index:1;
     position:absolute;
@@ -132,7 +134,7 @@ div#about {
     z-index:100;
     top:6.5%;
     padding:35px;
-
+    
 
 }
 .about-container {
@@ -183,7 +185,7 @@ div#about {
     letter-spacing: 0px;
     color:white;
     position:absolute;
-    top:11.5%;
+    top:10%;
     left:56%;
     animation: letter-grow 1s ease-in;
     animation-fill-mode:forwards;
@@ -191,10 +193,11 @@ div#about {
 }
 .collapse-container {
     position:absolute;
-   
+    
     .collapse {
         z-index:20;
         position:relative;
+
 
     }    
 
@@ -259,6 +262,7 @@ div#about {
         transition:border-radius 1s ease-in;
         transition-delay:0.3s;
         cursor:pointer;
+        animation:rise-up 1s;
     }
     
     .toggle:hover {
@@ -569,6 +573,16 @@ button#emailBtn-about:hover {
     }
 }
 
+@keyframes rise-up {
+    0% {
+        transition:translateY(-1000px) scale(0.8);
+    }
+    100% {
+        transition:translateY(0px) scale(1);
+
+    }
+}
+
 /* Media Queries */
 
 @media only screen and (min-width:1181px) {
@@ -631,10 +645,7 @@ button#emailBtn-about:hover {
         top:45%;
         .collapse {
             margin:0 auto;
-            .content.show, .content {
-
-        
-            }
+           
         }
        
 
@@ -668,12 +679,12 @@ button#emailBtn-about:hover {
     .about-container{
         top:3%;
         width:90vw;
-        height:50vw;
+        height:300px;
 
 
         .about-inner {
             width:60vw;
-
+            height:22vh;
             .aboutme_img {
                 width: 10rem;
 
@@ -708,6 +719,7 @@ button#emailBtn-about:hover {
     }
 
     .collapsible {
+        z-index:100;
         .toggle {
             width:400px;
         }
@@ -745,7 +757,8 @@ button#emailBtn-about:hover {
 /* Iphone SE (Fix about container to have pictureo on top half, text bottom half.) */
 @media only screen and (max-width:480px) {
     .about-container {
-        background-color:yellow;
+
+        padding:20px;
     }
 }
 

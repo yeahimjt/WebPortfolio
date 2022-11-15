@@ -17,7 +17,16 @@ function Projects () {
         <div id="projects">
 
             <Navbar/>
-        
+            <div className="bubble-div">
+                    <div className="bubble-items"></div>
+                    <div className="bubble-items"></div>
+                    <div className="bubble-items"></div>
+                    <div className="bubble-items"></div>
+                    <div className="bubble-items"></div>
+                    <div className="bubble-items"></div>
+                    <div className="bubble-items"></div>
+                    <div className="bubble-items"></div>
+                </div>
             <div className="project-wrapper">
                 <div className="project-row">
                     
@@ -25,6 +34,7 @@ function Projects () {
                         <div className="image-container"><img className="nerd4u" src={ecommerce} alt="Nerd4U Project"></img></div>   
                         <div className="links">
                             <a href="https://github.com/yeahimjt/Group-7-Project" target="_blank" alt="See the code" rel="noreferrer"><FaGithubSquare className="card-github"/></a>
+                            <BiLinkExternal className="card-link"/>
 
                         </div>
                         <h6 className="card-header">E-Commerce Website</h6> 
@@ -34,10 +44,11 @@ function Projects () {
                     <div className="project-item">
                         <div className="image-container"></div>   
                         <div className="links">
-                        
+                            <FaGithubSquare className="card-github unavailable"/>
+                            <BiLinkExternal className="card-link"/>
                         </div>
-                        <h6 className="card-header">Flutter Application</h6> 
-                        <p className="card-content">Currently in development. Creating a Flutter mobile app for a fictional hotel booking service called Trip</p>
+                        <h6 className="card-header" >Flutter Application</h6> 
+                        <p className="card-content">Currently in development. Creating a Flutter mobile app for a fictional hotel booking service called BookFive.</p>
                     </div>
                     
                 </div>
