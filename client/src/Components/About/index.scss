@@ -614,16 +614,23 @@ button#emailBtn-about:hover {
 
     }
     div#about{
-        height:140vh;
+        height:150vh;
         overflow:hidden;
     }
     .about-container{
 
         width:90%;
-        height:400px;
+        height:300px;
 
         .about-inner {
             margin:0px auto;
+            height:28vw;
+            .about-text {
+                font-size:2vw;
+            }
+        }
+        .aboutme_img {
+            width:100px;
         }
     }
     .skills-title {
@@ -676,10 +683,14 @@ button#emailBtn-about:hover {
         overflow-x:hidden;
         overflow-y:visible;
     }
+    div#about{
+        height:1800px;
+        overflow:hidden;
+    }
     .about-container{
-        top:3%;
+        top:6%;
         width:90vw;
-        height:300px;
+        height:200px;
 
 
         .about-inner {
@@ -695,14 +706,14 @@ button#emailBtn-about:hover {
 
             }
             h2,h5,.about-text {
-                font-size:2.6vw;
+                font-size:2vw;
     
             }
         }
 
     }
     .skills-title {
-        top:32%;
+        top:34%;
         left:4vw;
         position:absolute;
         width:100vw;
@@ -713,7 +724,7 @@ button#emailBtn-about:hover {
 
     }
     .collapse-container {
-        top:35%;
+        top:37%;
 
 
     }
@@ -756,9 +767,61 @@ button#emailBtn-about:hover {
 
 /* Iphone SE (Fix about container to have pictureo on top half, text bottom half.) */
 @media only screen and (max-width:480px) {
-    .about-container {
 
+    div#about{
+
+        overflow:hidden;
+    }
+    
+    .about-container {
+        top:4%;
         padding:20px;
+    
+
+
+        .about-inner {
+            width:60vw;
+            height:22vh;
+            .aboutme_img {
+                width: 6rem;
+                left:-15px;
+                margin:0 auto;
+                border-radius: 10px 0px 0px 0px;
+                shape-outside:none;
+
+            }
+            h2,h5,.about-text {
+               
+    
+            }
+        }
+    }
+    .collapse-container {
+        .collapse {
+
+            left:-18px;
+        }
+        .toggle {
+            width:80%;
+            left:-20px;
+        }
+        .languages-collapse {
+            .languages {
+                .languages-content-container {
+                    
+                }
+            }
+
+        }
+    }
+    .box {
+        background-color: yellow;
+        color: #fff;
+        padding: 2px;
+
+
+
+
     }
 }
 

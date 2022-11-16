@@ -39,12 +39,13 @@ const Navbar = () => {
                 <li>
                     <div className="nav-item">
                     <NavLink exact="true" activeClassName="active"  to="/">
+                        <div className="nav-text">
+                            <p style={{color: aTag}}>Home</p>
+                        </div>
                         <div className="nav-icon">
                             <FontAwesomeIcon icon={faHome}/>
                         </div>
-                        <div className="nav-text">
-                        <p style={{color: aTag}}>Home</p>
-                        </div>
+                       
                     </NavLink>
                     </div>
                 </li>

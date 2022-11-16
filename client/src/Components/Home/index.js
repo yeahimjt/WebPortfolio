@@ -39,13 +39,13 @@ function Home () {
         <>
             <div id="home">
                 <Navbar></Navbar>
-                <div style={{position:"relative", top:"0", left:"0", width:"100vw", height:"100%"}}>
-                <Canvas shadows camera={{position:[1,2,5]}} className="home-canvas">
-                    <ambientLight position={[10,2,5]} intensity={0.3}/>
+                <div style={{position:"relative", top:"25%", left:"44%", width:"50vw", height:"50%"}}>
+                <Canvas shadows camera={{position:[4,1,4]}} className="home-canvas">
+                    <ambientLight position={[10,2,5]} intensity={20}/>
                     <directionalLight 
                         castShadow
-                        position={[-10,10,10]}
-                        intensity={12}
+                        position={[15,5,8]}
+                        intensity={10}
                         shadow-mapSize-width={1024}
                         shadow-mapSize-height={1024}
                         shadow-camera-far={50}
@@ -54,7 +54,7 @@ function Home () {
                         shadow-camera-top={10}
                         shadow-camera-bottom={-10}/>
 
-                    <CoinLogo className="coin-logo" position={[2.7,0.5,0.5]}/>
+                    <CoinLogo className="coin-logo" position={[1,0.5,1.5]}/>
 
                     <pointLight position={[100,10,5]} intensity={5}/>
                     <pointLight position={[-100,-10,-5]} intensity={5}/>

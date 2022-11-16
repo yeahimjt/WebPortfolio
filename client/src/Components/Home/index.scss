@@ -232,4 +232,45 @@ button#myBtn:active {
            
 
     }
+
+
+    @media only screen and (max-width:1261px) 
+
+    {
+            div#home {
+                overflow:hidden;
+            }
+
+            .home-canvas {
+                visibility:hidden;
+            }
+
+            .heading-container {
+
+                position:absolute;
+                top:35%;
+                width:100%;
+                left:0;
+                .heading-content {
+                    margin:0 auto;
+                    width:60%;
+                    padding:40px;
+
+                    h4 {
+                        font-size:3vw;
+                        text-align:center;
+                        left:-5px;
+                    }
+                    h5 {
+                        font-size:3.5vw;
+                    }
+                    h1 {
+
+                        font-size:5.2vw;
+                    }
+                }
+            }
+           
+
+    }
     
