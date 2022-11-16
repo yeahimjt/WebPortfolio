@@ -19,7 +19,6 @@ const About = () =>  {
     return (
         
         <>
-           
             <div id="about">
                 <Navbar></Navbar>
                
