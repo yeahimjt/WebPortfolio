@@ -772,12 +772,17 @@ button#emailBtn-about:hover {
 
         overflow:hidden;
     }
-    
+    .skills-title {
+        top:32%;
+        font-size:8px;
+        letter-spacing: 50px;
+        animation:letter-grow 1s ease-in;
+        animation-fill-mode: backwards;
+    }
     .about-container {
-        top:4%;
+        top:6%;
         padding:20px;
     
-
 
         .about-inner {
             width:60vw;
@@ -802,8 +807,11 @@ button#emailBtn-about:hover {
             left:-18px;
         }
         .toggle {
-            width:80%;
+            width:100%;
             left:-20px;
+        }
+        .content, .collapse-container {
+
         }
         .languages-collapse {
             .languages {
