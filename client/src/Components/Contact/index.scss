@@ -142,6 +142,7 @@ div#contact {
     top:12%;
     left:57%;
     width:35%;
+    height:80%;
 
     
 }
@@ -149,6 +150,8 @@ div#contact {
     background-color:white;
     width:100%;
     padding:45px;
+
+    overflow-y:scroll;
 }
   
 
@@ -231,7 +234,7 @@ z-index:5;
 }
 .form-label-text-area {
     display:block;
-    transform:translateY(-19em) translateX(0.8em);
+    transform:translateY(-14.5em) translateX(0.8em);
     transform-origin: 0,0;
     transition:all 0.5s;
     font-size:1.2em;
@@ -258,7 +261,7 @@ z-index:5;
 .form-text-area {
     width:96%;
     margin-top:20px;
-    height:20em;
+    height:15em;
     transition:all 0.5s;
     border-width:2px;
     border-style: solid solid solid solid;
@@ -321,7 +324,7 @@ z-index:5;
 .form-text-area:focus + .form-label-text-area,
 .form-text-area:not(:placeholder-shown) + .form-label-text-area
  {
-    transform:translateY(-21em);
+    transform:translateY(-16.5em);
 }
 
 
