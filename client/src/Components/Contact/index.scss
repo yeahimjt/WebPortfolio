@@ -35,7 +35,7 @@ div#contact {
     left:-5%;
     animation: move-around 20s infinite;
     scale:(0.4);
-    z-index:110;
+    z-index:1;
 }
 #bubble-contact4 {
     
@@ -60,7 +60,7 @@ div#contact {
 .speech-container {
     width:50%;
     position:relative;
-    top:12%;
+    top:120px;
     left:2%;
     animation:grow-width 1s ease-in;
 }
@@ -139,7 +139,7 @@ div#contact {
 .form{
     z-index:100;
     position:absolute;
-    top:12%;
+    top:120px;
     left:57%;
     width:35%;
     height:80%;
@@ -150,7 +150,7 @@ div#contact {
     background-color:white;
     width:100%;
     padding:45px;
-
+    height: 60vh;
     overflow-y:scroll;
 }
   
@@ -329,7 +329,7 @@ z-index:5;
 
 
 .sendBtn {
-    margin-top:-5px;
+    margin-top:-30px;
     width:97%;
     position:relative;
     left:0px;
