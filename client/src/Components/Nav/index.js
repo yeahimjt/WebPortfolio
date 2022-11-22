@@ -16,11 +16,11 @@ const Navbar = () => {
     const location = useLocation();
     React.useEffect(() => {
       if (window.location.pathname === "/") {
-        setATag("#F2294E");
+
         
       } 
       else {
-        setATag("orange");
+        
       }
     }, [location]);
     

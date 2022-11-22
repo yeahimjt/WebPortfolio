@@ -98,7 +98,7 @@ const About = () =>  {
                                     </div>   
                                     <div className="box">
 
-                                        Express JS
+                                        Node Js
                                     </div>                                   
                                 </div>
                             </Collapsible>

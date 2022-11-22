@@ -59,7 +59,7 @@ function Home () {
                     <pointLight position={[100,10,5]} intensity={5}/>
                     <pointLight position={[-100,-10,-5]} intensity={5}/>
                     <group>
-                        <mesh receiveShadow rotation={[-Math.PI / 2,0,0]} position={[1,-3,0.5]}>
+                        <mesh receiveShadow rotation={[-Math.PI / 2,0,0]} position={[3,-1,3]}>
                             <planeBufferGeometry attach="geometry" args={[200,100]}/>
                             <shadowMaterial attach="material" opacity={0.1} color={'black'}/>
                         </mesh>
@@ -71,15 +71,61 @@ function Home () {
                     <div className="heading-content">
                         <h5>Hello, I'm</h5>
                         <h1>Jonathan Andrew Trevino</h1>
-                        <h4 className="h4-text">Full Stack Software Developer/Engineer</h4>
-                            <a href="/contact"><button id="myBtn">
-                                <p>Contact me</p>
-                            </button></a>
-                        
+                        <h4 className="h4-text">Full Stack Software Developer/Engineer who is excited to deliver what you request</h4>
+                            <button id="myBtn">
+                            <a href="/contact"><p>Contact me</p></a>
+                            </button>
                     </div>
-                    
                 </div>
-                {modalState && <Modal closeModal={setModalState}/>}
+
+                <div className="skills-home-container">
+                    <div className="skills-home-heading">
+                        <h2>Skills I can deliver</h2>
+                    </div>
+                    <hr className="skills-bar"></hr>
+                    <div className="skills-grid-container">
+                        <div className="skills-grid-box">
+                            React
+                        </div>
+                        <div className="skills-grid-box">
+                            Node Js
+                        </div>
+                        <div className="skills-grid-box">
+                            PHP
+                        </div>
+                        <div className="skills-grid-box">
+                            Flask
+                        </div>
+                        <div className="skills-grid-box">
+                            Python
+                        </div>
+                        <div className="skills-grid-box">
+                            MySQL
+                        </div>
+                        <div className="skills-grid-box">
+                            Java
+                        </div>
+                        <div className="skills-grid-box">
+                            C
+                        </div>
+                    </div>
+                    <div className="skills-cta">
+                        <p>Want to view more?</p>
+                        <a className="skills-home-link" href="/about">Click Here</a>
+                    </div>
+                </div>
+                <div className="projects-home-container">
+                    <div className="projects-ecommerce">
+                        <h3 className="projects-ecommerce-header">To view my E-Commerce website utilizing <div className="highlight-container"><div className="highlight-text">React</div></div>, and <div className="highlight-container-2"><div className="highlight-text-2">NodeJs</div></div></h3>
+                        <button className="projects-ecommerce-btn"><a href="/projects" className="projects-btn">Click Here</a></button>
+                    </div>
+                    {/* <div className="projects-flutter">
+                        <h3 className="projects-flutter-header">To view my Mobile Application utilizing <div className="highlight-container"><div className="highlight-text">Flutter</div></div></h3>
+                        <button className="projects-flutter-btn"><a href="/projects" className="projects-btn">Click Here</a></button>
+                        <div className="not-implemented">(Currently not implemented)</div>
+                    </div> */}
+                </div>
+
                 <div className="heading-links">
                     <a className="heading-linkedin" target="_blank" rel="noreferrer" href="https://linkedin.com/in/jonathanandrewtrevino">
                         <div><BsLinkedin className="linkedin-icon"/></div>
@@ -90,7 +136,7 @@ function Home () {
                     </a>
 
                 </div>
-
+                
             </div>
 
         </>

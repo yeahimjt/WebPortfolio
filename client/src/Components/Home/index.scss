@@ -7,7 +7,7 @@
 
 .heading-container{
     position:absolute;
-    top:40%;
+    top:135px;
     opacity:0;
     animation:from-left 1s ease-out;
     animation-delay:1.4s;
@@ -22,17 +22,17 @@
 
 @keyframes from-left {
     0% {
-        transform:translateX(-1000px);
+        transform:translateX(-1000px) skew(15deg);
         opacity:1;
     }
     40% {
         transform:translateX(20px);
     }
     75% {
-        transform:translateX(-10px);
+        transform:translateX(-10px) skew(15deg);
     }
     100% {
-        transform:translateX(0px);
+        transform:translateX(0px) skew(0deg);  
         opacity:1
     }
 }
@@ -56,7 +56,8 @@ div#home {
     left:0;
     width:100%;
     height:100%;
-    background-color: #fffaf0;
+    background: radial-gradient( #485563 50%, #1e242a 90%);
+
 
 }
 .about-nav {
@@ -66,15 +67,15 @@ div#home {
 }
 h1 {
     font-size:55px;
-    color: #042F4B;
+    color: #FFFFFF;
     margin-bottom:7px;
 }
 
 h4 {
-    font-size:25px;
+    font-size:23px;
     position:relative;
-    left:90px;
-    color: #262626;
+    left:-95px;
+    color: #c0c0c0;
     opacity:0.8;
     margin:-5px 0px 0px 0px;
     
@@ -82,25 +83,28 @@ h4 {
 
 h5 {
     font-size:30px;
-    color:#262626;
+    color:#c0c0c0;
     opacity:0.8;
-    margin-bottom:-7px;
+    margin-bottom:-5px;
    
 }
 
 button#myBtn {
     display:flex;
+    justify-content: center;
     align-self:center;
-    justify-content:center;
+    position:relative;
+
     width:120px;
     height:35px;
-    border-radius:4px;
-    border:none;
-    left:38%;
-    padding-top:5px;
-    margin: 20px 0px 0px 0px;
+    border-radius:50px;
+    border:none; 
+    padding-top:7px;
+    margin: 12px 0px 0px 0px;
     background: #F2294E;
+
     p {
+        font-size:17px;
         color:whitesmoke;
     }
 }
@@ -131,7 +135,7 @@ button#myBtn:active {
     left:0px;
 
     .heading-linkedin, .heading-github {
-        background-color:#052446;
+        background-color:#ffffff;
         display:flex;
         align-items:center;
         padding-top:2px;
@@ -147,7 +151,7 @@ button#myBtn:active {
     .linkedin-icon, .github-icon {
         width:20px;
         height:50px;
-        color:floralwhite;
+        color:rgb(0, 0, 0);
     }
     
     .heading-linkedin:hover,.heading-github:hover {
@@ -170,6 +174,232 @@ button#myBtn:active {
         transform:scale(1)
     }
 }
+.projects-home-container {
+    width:620px;
+    height:240px;
+    left:160px;
+    top:520px;
+    position:absolute;
+    animation:fade-into 1s ease-in;
+    animation-fill-mode: forwards;
+    animation-delay:2.8s;
+    opacity:0;
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+    .projects-ecommerce,.projects-flutter {
+        background:radial-gradient(circle 400px, rgba(255,255,255,0.9)40%,rgba(255,255,255,0.5)100%);
+        width:100%;
+        height:46%;
+        border-radius:25px;
+    }
+    .projects-ecommerce {
+        text-align:center;
+        .projects-ecommerce-header {
+            top:20px;
+            text-align:center;
+            position:relative;
+            font-size:21px;
+            text-shadow:0px 2px 5px gray; 
+            z-index:5; 
+
+        }
+        .projects-ecommerce-btn {
+            top:35px;
+            position:relative;
+            width:120px;
+            border:none;
+            background-color:#F2294E;   
+            text-decoration: none;
+            color:white;
+            height:30px;
+            border-radius:20px;
+        }
+    }
+    .projects-flutter {
+        text-align:center;
+        .projects-flutter-header {
+            top:20px;
+            text-align:center;
+            position:relative;
+            font-size:21px;
+            text-shadow:0px 2px 5px gray; 
+            z-index:5; 
+        }
+        .projects-flutter-btn {
+            top:35px;
+            position:relative;
+            width:120px;
+            border:none;
+            background-color:#F2294E;   
+            text-decoration: none;
+            color:white;
+            height:30px;
+            border-radius:20px;
+        }
+        .not-implemented {
+            position:absolute;
+            right:15px;
+            bottom:15px;
+            opacity:0.2;
+        }
+    }
+    .projects-btn {
+        color:white;
+    }
+}
+@keyframes fade-into {
+from{ opacity: 0;} to { opacity:1;}
+}
+.skills-home-container {
+
+    width:620px;
+    height:200px;
+    left:160px;
+    top:320px;
+    position:absolute;
+    .skills-home-heading {
+        letter-spacing: 15px;
+        text-align:center;
+        color:white;
+        opacity:0;
+        animation:from-down 1s ease-in;
+        animation-delay:1.3s;
+        animation-fill-mode:forwards;
+    }
+    .skills-bar {
+        opacity:0;
+        animation:from-down 1s ease-in;
+        animation-delay:1.3s;
+        animation-fill-mode:forwards;
+    }
+    .skills-grid-container {
+        display:grid;
+        grid-template-columns: 145px 145px 145px 145px;
+        gap:10px 10px;
+        position:relative;
+        top:15px;
+        left:10px;
+        .skills-grid-box {
+            width:90%;
+            padding-top:10px;
+            padding-bottom:10px;
+            background-color:#444;
+            text-align:center;
+            transition:all 0.2s ease-out;
+            color:white;
+            animation: scale-boxes 0.5s ease-in;
+            opacity:0;
+            animation-fill-mode:forwards;
+            animation-delay:2s;
+        }
+        .skills-grid-box:hover {
+                scale:0.9;
+            background-color:red;
+        }
+    }
+    .skills-cta {
+        position:relative;
+        display:flex;
+        justify-content: center;
+        gap:20px;
+        opacity:0;
+        align-items: center;
+        flex-direction: row;
+        height:25%;
+        width:100%;
+        top:15px;
+        color:white;
+        animation: from-bottom 1s ease-in;
+        animation-delay:3.8s;
+        animation-fill-mode: forwards;
+        a.skills-home-link {
+            color:rgb(242, 41, 78);
+            text-decoration: underline;
+
+        }
+    }
+ 
+}
+
+@keyframes from-bottom {
+0% {
+  transform:translateY(100px);
+  opacity:0;
+}
+90% {
+  opacity:0.2;
+}
+100% {
+  transform:translateY(0px);
+  opacity:1;
+}
+}
+@keyframes from-down {
+  0% {
+    opacity:0;
+    transform: translateY(30px);
+  }
+  100%{
+    opacity:1;
+    transform:translateY(0px);
+  }
+}
+@keyframes scale-boxes {
+  0% {
+    transform:scale(0.1);
+  }
+  75% {
+    transform:scale(1.2);
+  }
+  100% {
+    transform:scale(1);
+    opacity:1;
+  }
+}
+.highlight-text,.highlight-container {
+    display:inline-block;
+    position:relative;
+
+
+}
+.highlight-container:before {
+    content:"";
+    display: block;
+  height: 10px;
+  width: 41px;
+  margin-left: -3px;
+  margin-right: -3px;
+  position: absolute;
+  background: rgba(242, 239, 41, 0.7);
+  transform: rotate(2deg);
+  top: 7px;
+  left: -1px;
+  border-radius: 20% 25% 20% 24%;
+  padding: 10px 3px 3px 10px;
+}
+
+.highlight-text-2,.highlight-container-2 {
+    display:inline-block;
+    position:relative;
+
+
+}
+.highlight-container-2:before {
+    content:"";
+    display: block;
+  height: 10px;
+  width: 49px;
+  margin-left: -3px;
+  margin-right: -3px;
+  position: absolute;
+  background: rgba(242, 239, 41, 0.7);
+  transform: rotate(2deg);
+  top: 7px;
+  left: -1px;
+  border-radius: 20% 25% 20% 24%;
+  padding: 10px 3px 3px 10px;
+}
 
 /* Media Queries */
 
@@ -179,13 +409,12 @@ button#myBtn:active {
     and (min-device-width: 769px) 
 { 
         .heading-container {
-            left:10%;
-
-        }
-        button#myBtn {
-            position:relative;
-            display:flex;
-        }
+            left:170px;
+       }
+       button#myBtn {
+          position:absolute;
+          left:19vw;
+       }
     }
 
     /* Tablets */
@@ -194,7 +423,7 @@ button#myBtn:active {
 
     /* Phones (Portrait) / Tablets */
 
-    @media only screen and (max-width:768px) 
+    @media only screen and (max-width:680px) 
 
     {
             div#home {
@@ -202,34 +431,17 @@ button#myBtn:active {
             }
 
             .heading-container{
-
-                width:100vw;
-                height:180px;
-                left:5%;
-                margin:auto;
-                h5 {
-                    font-size:4vw;
-                }
-                h1{
-                    font-size:8vw;
+                h1 {
+                  font-size:7vw;
                 }
                 h4 {
-                    left:10%;
-                    font-size:3.9vw;
+                  font-size:2.5vw;
+                }
+                h5 {
+                  font-size:3.2vw;
+                  left:-31vw;
                 }
             }
-
-            button#myBtn {
-                position:relative;
-                top:-12px;
-                left:30%;
-            }
-
-            .home-canvas {
-                visibility: hidden;
-            }
-
-           
 
     }
 
@@ -243,34 +455,117 @@ button#myBtn:active {
 
             .home-canvas {
                 visibility:hidden;
+        
             }
-
-            .heading-container {
-
-                position:absolute;
-                top:35%;
-                width:100%;
-                left:0;
-                .heading-content {
-                    margin:0 auto;
-                    width:60%;
-                    padding:40px;
-
-                    h4 {
-                        font-size:3vw;
-                        text-align:center;
-                        left:-5px;
-                    }
-                    h5 {
-                        font-size:3.5vw;
-                    }
-                    h1 {
-
-                        font-size:5.2vw;
-                    }
-                }
+            button#myBtn {
+              position:relative;
+            
             }
-           
-
     }
+
+    @media only screen and (min-width: 1262px) {
+        button#myBtn {
+          position:relative;
+          left:250px;
+        }
+    }
+      
+   @media only screen and (max-width: 980px) 
+   {
+     .heading-container {
+        width:100%;
+        left:0;
+      .heading-content {
+        width:100%;
+      }
+    }
+      h4 {
+        font-size:2vw;
+        text-align:center;
+        left:0;
+      }
+      h1 {
+        font-size:4vw;
+        position:relative;
+        text-align:center;
+      }
+      h5 {
+        font-size:2.5vw;
+        text-align:center;
+        position:relative;
+        left:-16.5vw;
+      }
+
+      button#myBtn {
+        position:relative;
+        left:44%;
+      }
+    .skills-home-container {
+      position:absolute;
+      width:100%;
+      left:0;
+      top:290px;
+      .skills-grid-container {
+        width:100%;
+        grid-template-columns: repeat(auto-fill,minmax(150px,1fr)) ;;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 880px) {
+
+    .skills-home-heading {
+      h2 {
+        letter-spacing:10px;
+        font-size:4vw;
+      }
+    }
+      .projects-home-container {
+        display:flex;
+        left:0;
+        width:100%;
+        align-items:center;
+        .projects-ecommerce {
+          width:80vw;
+          position:relative;
+          left:-5vw;
+          .projects-ecommerce-header {
+            top:10px;  
+            font-size:3vw;
+          }
+          .projects-ecommerce-btn {
+            top:25px;
+
+          }
+        }
+
+
+      }
+
+  }
+
+  @media only screen and (max-width:470px) {
     
+    .projects-home-container {
+      top:600px;
+      width:100%;
+      left:0;
+      display:flex;
+      align-items:center;
+      .projects-ecommerce {
+        position:relative;
+        width:300px;
+        left:0;
+        
+        .projects-ecommrce-header {
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width:310px) {
+      .projects-home-container {
+        top:760px;
+      }
+
+  }
