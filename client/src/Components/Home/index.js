@@ -116,7 +116,7 @@ function Home () {
                 </div>
                 <div className="projects-home-container">
                     <div className="projects-ecommerce">
-                        <h3 className="projects-ecommerce-header">To view my E-Commerce website utilizing <div className="highlight-container"><div className="highlight-text">React</div></div>, and <div className="highlight-container-2"><div className="highlight-text-2">NodeJs</div></div></h3>
+                        <h3 className="projects-ecommerce-header">To view my E-Commerce website utilizing <div className="highlight-container"><div className="highlight-text">Flask</div></div>, and <div className="highlight-container-2"><div className="highlight-text-2">Python</div></div></h3>
                         <button className="projects-ecommerce-btn"><a href="/projects" className="projects-btn">Click Here</a></button>
                     </div>
                     {/* <div className="projects-flutter">
